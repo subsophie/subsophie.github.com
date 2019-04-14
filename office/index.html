@@ -128,8 +128,24 @@ button#ui-bar-toggle,#ui-bar-tray button,#ui-bar a {
   color: white;
 }
 
+div#scores {
+    font-size: 24pt;
+    font-style: bold;
+    color: #660000;
+}
+
 div#ui-bar-history {
     display:none;
+}
+
+div#story-caption span.label {
+    font-weight: bold;
+    color: #660000;
+}
+
+div#picture-box {
+    border: 2px solid #660000;
+    bttom-margin: 1em;
 }
 
 #passages {
@@ -280,7 +296,7 @@ setup.set_image = function(name) {
             label = 'The Author';
     }
     $('div#picture').html('<img src="' + image + '" alt="' + label + '">');
-    $('div#caption').html(label);
+    $('div#caption').html('<span class="label">' + label + '</span>');
 };
 
 setup.set_chap_title = function(chapter) {
@@ -332,7 +348,7 @@ setup.toggle_visibility = function(chap) {
 };</script><tw-passagedata pid="1" name="StoryCaption" tags="nobr" position="100,100">&lt;div id=chapterTitle&gt;
 &lt;/div&gt;
 &lt;br/&gt;
-&lt;div id=&quot;picture_box&quot;&gt;
+&lt;div id=&quot;picture-box&quot;&gt;
     &lt;div id=&quot;picture&quot;&gt;
     &lt;/div&gt;
     &lt;div id=&quot;caption&quot;&gt;
@@ -352,9 +368,9 @@ setup.toggle_visibility = function(chap) {
         &lt;/div&gt;
     &lt;/div&gt;
     &lt;br/&gt;
-Rank&lt;br/&gt;
+&lt;span class=&quot;label&quot;&gt;Rank&lt;/span&gt;&lt;br/&gt;
     &lt;&lt;print setup.dom_rank($score_dom)&gt;&gt; &lt;&lt;print setup.sub_rank($score_sub)&gt;&gt;&lt;br/&gt;
-Name&lt;br/&gt;
+&lt;span class=&quot;label&quot;&gt;Name&lt;/span&gt;&lt;br/&gt;
     &lt;&lt;switch $chapter&gt;&gt;
         &lt;&lt;case 1&gt;&gt;
             &lt;&lt;print $name_first&gt;&gt; &lt;&lt;print $name_last&gt;&gt;
